@@ -1,0 +1,24 @@
+def spoonerize(words):
+    res = ''    
+    split = words.split(' ')
+    first = ''
+    second = ''
+    
+    for j, word in enumerate(split):
+        for i, letter in enumerate(word):
+            if j == 0 and i == 0:
+                first = letter
+            if j == 1 and i == 0:
+                second = letter
+    
+    for j, word in enumerate(split):
+        for i, letter in enumerate(word):
+            if j == 0 and i == 0:
+                res += second
+            elif j == 1 and i == 0:
+                res += ' '
+                res += first
+            else:
+                res += letter
+                
+    return res
